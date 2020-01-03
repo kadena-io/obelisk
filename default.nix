@@ -248,11 +248,6 @@ in rec {
         imports = [
           (serverModules.mkBaseEc2 args)
           (serverModules.mkObeliskApp args)
-          ./acme.nix
-        ];
-        disabledModules = [
-          (pkgs.path + /nixos/modules/security/acme.nix)
-        ];
         nixpkgs.overlays = [
           (self: super: let
             nixos1909 = import (hackGet ./dep/nixpkgs-19.09) {};
