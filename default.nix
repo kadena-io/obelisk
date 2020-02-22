@@ -270,7 +270,7 @@ in rec {
             , packages ? {}
             , overrides ? _: _: {}
             , staticFiles ? null
-            , tools ? _: []
+            , tools ? _: [ (import dep/ghcide-nix {}).ghcide-ghc865 ]
             , shellToolOverrides ? _: _: {}
             , withHoogle ? false # Setting this to `true` makes shell reloading far slower
             , __closureCompilerOptimizationLevel ? "ADVANCED" # Set this to `null` to skip the closure-compiler step
