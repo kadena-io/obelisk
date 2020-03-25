@@ -249,13 +249,6 @@ in rec {
           (serverModules.mkBaseEc2 args)
           (serverModules.mkObeliskApp args)
         ];
-        nixpkgs.overlays = [
-          (self: super: let
-            nixos1909 = import (hackGet ./dep/nixpkgs-19.09) {};
-          in {
-            inherit (nixos1909) simp_le;
-          })
-        ];
       };
     };
 
